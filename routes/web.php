@@ -31,3 +31,4 @@ Route::get('/admin','PagesController@admin')->name('admin');
 Route::get('/secretaire','PagesController@secretaire')->name('secretaire');
 
 Route::resource('lepatient', 'PatientController');
+Route::resource('lemedecin', 'MedecinController');
