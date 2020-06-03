@@ -24,7 +24,7 @@
         <h4 class="my-0 mr-md-auto font-weight-normal" href="{{ url('/admin') }}" >AlloDoc</h4>
         <nav class="my-2 my-md-0 mr-md-3">
           <a class="p-4 text-dark" style="font-size:18px" href="{{ route('lemedecin.index') }}">Gestion des medecins</a>
-          <a class="p-4 text-dark" style="font-size:18px" href="/gestionpat">Gestion des patients</a>
+          <a class="p-4 text-dark" style="font-size:18px" href="{{ route('userpatient.index')}}">Gestion des patients</a>
           <a class="p-4 text-dark" style="font-size:18px" href="/">Gestion des secretaires</a>
           <a class="p-4 text-dark" style="font-size:18px" href="/profil">Mon compte</a>
 

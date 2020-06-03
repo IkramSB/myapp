@@ -32,3 +32,7 @@ Route::get('/secretaire','PagesController@secretaire')->name('secretaire');
 
 Route::resource('lepatient', 'PatientController');
 Route::resource('lemedecin', 'MedecinController');
+
+Route::resource('patient/dossier','DossierController');
+
+Route::resource('userpatient', 'UController');

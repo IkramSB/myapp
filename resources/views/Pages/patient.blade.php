@@ -7,56 +7,6 @@
     <p class="lead">Prenez votre rendez-vous pour une vidéo-consultation.</p>
   </div>
   
-  <div class="container">
-    <div class="card-deck mb-3 text-center">
-      <div class="card mb-4 shadow-sm">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Spécialité </h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title pricing-card-title">Nom du médecin <small class="text-muted"> / nbr de consultations</small></h1>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li>text</li>
-          </ul>
-          <button type="button" class="btn btn-lg btn-block btn-outline-primary">Voir son profil</button>
-        </div>
-      </div>
-      <div class="card mb-4 shadow-sm">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Spécialité</h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title pricing-card-title">Nom du médecin <small class="text-muted"> / nbr de consultations</small></h1>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li>text</li>
-          </ul>
-          <button type="button" class="btn btn-lg btn-block btn-outline-primary">Voir son profil</button>
-        </div>
-      </div>
-      <div class="card mb-4 shadow-sm">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Spécialité</h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title pricing-card-title">Nom du médecin <small class="text-muted"> / nbr de consultations</small></h1>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li>text</li>
-          </ul>
-          <button type="button" class="btn btn-lg btn-block btn-outline-primary">Voir son profil</button>
-        </div>
-      </div>
-      <div class="card mb-4 shadow-sm">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Spécialité</h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title pricing-card-title">Nom du médecin <small class="text-muted"> / nbr de consultations</small></h1>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li>text</li>
-          </ul>
-          <button type="button" class="btn btn-lg btn-block btn-outline-primary">Voir son profil</button>
-        </div>
-      </div>
-    </div>
+  @include('inc.cards')
 
 @endsection

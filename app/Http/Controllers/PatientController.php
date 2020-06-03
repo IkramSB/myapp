@@ -39,6 +39,7 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
+        
 
         $user=new patient;
         $user->Nom = $request->input('Nom');
@@ -47,9 +48,10 @@ class PatientController extends Controller
         $user->Num_assurance = $request->input('Num_assurance');
         $user->Num_tele = $request->input('Num_tele');
         $user->save();
+        
 
         $auth=new authentification;
-        $auth->id_user = patient::count();
+        $auth->id_user = patient::max('ID_patient');
         $auth->role='patient';
         $auth->login = $request->input('login');
         $pwd= $request->input('password');

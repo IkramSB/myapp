@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\authentification;
 use App\medecin;
+use App\image;
+
 
 class MedecinController extends Controller
 {
@@ -37,21 +39,43 @@ class MedecinController extends Controller
      */
     public function store(Request $request)
     {
+        if($request->hasFile('image')){
+            $filenameWithExt =$request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('image')->storeAs('public/images',$fileNameToStore);
+
+        } else{
+             $fileNameToStore='noimage.jpg';
+        }
+
+
+
+        $img= new image;
+        $img->image=$fileNameToStore;
+        $img->save();
+
+
         $user=new medecin;
         $user->Nom = $request->input('Nom');
         $user->Prenom = $request->input('Prenom');
         $user->email = $request->input('login');
         $user->addresse = $request->input('addresse');
         $user->Telephone = $request->input('Telephone');
+        $user->ID_specialite = $request->input('specialite');
+        $user->ID_image=$img->ID_image;
         $user->save();
 
         $auth=new authentification;
-        $auth->id_user = medecin::count();
+        $auth->id_user = medecin::max('ID_medecin');
         $auth->role='medecin';
         $auth->login = $request->input('login');
         $pwd= $request->input('password');
         $auth->password= Hash::make($pwd);
         $auth->save();
+
+        
 
         return redirect('/admin');
     }

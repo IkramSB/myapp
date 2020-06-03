@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-      <form action="{{ route('lemedecin.store') }}" method="POST">
+      <form action="{{ route('lemedecin.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -20,12 +20,22 @@
             <input type="text" class="form-control" id="Prenom" name="Prenom">
           </div>
         </div>
-
+  
+          
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="adresse">Spécialité</label>
-                <input type="text" class="form-control" id="Spécialité" name="Spécialité">
+                <label for="specialite">Spécialité</label>
+                <?php $specialites=DB::table('specialites')->get(); ?>
+                <select name="specialite" class="form-control" >
+                @foreach ($specialites as $spec)
+                     <option value="{{$spec->ID_specialite}}" ><?php echo $spec->specialite;?></option>
+                @endforeach
+                </select>
                </div>
+
+
+
+
             <div class="form-group col-md-6">
               <label for="inputNum">Numero de telephone</label>
               <input type="text" class="form-control" id="Telephone" name="Telephone">
@@ -55,6 +65,12 @@
             <input type="password" class="form-control" id="password" name="password">
           </div>
         </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Image</label>
+            <input type="file" class="form-control" id="image" name="image">
+          </div>
         
         <button type="submit" class="btn btn-primary">Ajouter</button>
       </form>

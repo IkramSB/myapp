@@ -20,6 +20,8 @@ class CreateMedecinsTable extends Migration
             $table->string('email' , 100);
             $table->string('addresse' , 100);
             $table->string('Telephone' , 10);
+            $table->integer('ID_specialite');
+            $table->integer('ID_image');
             $table->timestamps();
         });
     }
