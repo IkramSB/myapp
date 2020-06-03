@@ -71,8 +71,14 @@
             <label for="inputEmail4">Image</label>
             <input type="file" class="form-control" id="image" name="image">
           </div>
+        </div> 
+          <div class="form-row">
+        <div class="form-group col-med-3">
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+        </div>
+          </div>
+
         
-        <button type="submit" class="btn btn-primary">Ajouter</button>
       </form>
     </div>
     </div>
