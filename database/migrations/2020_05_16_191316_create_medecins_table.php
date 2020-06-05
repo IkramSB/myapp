@@ -18,6 +18,7 @@ class CreateMedecinsTable extends Migration
             $table->string('Nom' , 50);
             $table->string('Prenom' , 50);
             $table->string('email' , 100);
+            $table->string('Ville' , 50);
             $table->string('addresse' , 100);
             $table->string('Telephone' , 10);
             $table->integer('ID_specialite');

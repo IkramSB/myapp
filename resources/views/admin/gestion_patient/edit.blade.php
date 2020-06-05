@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.adm')
 @section('content')
 <br><br><br>
     <div class="container">
@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-      <form action="{{route('userpatient.update',$user->ID_patient) }}" method="POST">
+      <form action="{{route('patient.update',$user->ID_patient) }}" method="POST">
         
         <?php   use App\authentification;  $auth=authentification::where('id_user',$user->ID_patient)->first(); ?>
                        
@@ -56,14 +56,19 @@
             <label for="inputEmail4">Email</label>
             <input type="email" class="form-control" id="login" name="login" value="<?php  echo $auth->login; ?>">
           </div>
-      </div>    
+      
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Mot de passe</label>
+        <input type="password" class="form-control" id="password" name="password" value="<?php echo $auth->password; ?>">
+      </div>
+    </div>   
       
         
-        <button type="submit" class="btn btn-primary">Confirmer</button>
+        <button type="submit" class="btn btn-primary">Modifier</button>
       </form>
     </div>
     </div>
     </div> 
     </div>
     
-    @endsection 
+    @endsection    

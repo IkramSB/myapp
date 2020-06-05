@@ -36,3 +36,29 @@ Route::resource('lemedecin', 'MedecinController');
 Route::resource('patient/dossier','DossierController');
 
 Route::resource('userpatient', 'UController');
+
+
+
+
+
+//gestion des patient
+Route::resource('admin/users/patient', 'UsersController');
+
+
+//gestion des medecins
+Route::get('admin/users/medecin', 'UsersController@index2');
+Route::get('admin/users/medecin/create','UsersController@create2');
+Route::post('admin/users/medecin/store','UsersController@store2')->name('medecin.store');
+Route::get('admin/users/medecin/edit/{id}','UsersController@edit2');
+Route::get('admin/users/medecin/destroy/{id}','UsersController@destroy2')->name('medecin.destroy');
+Route::get('admin/users/medecin/update/{id}','UsersController@update2')->name('medecin.update');
+
+
+
+//gestion des secretaires
+Route::get('admin/users/secretaire', 'UsersController@index3');
+Route::get('admin/users/secretaire/create','UsersController@create3');
+Route::post('admin/users/secretaire/store','UsersController@store3')->name('secretaire.store');
+Route::get('admin/users/secretaire/edit/{id}','UsersController@edit3');
+Route::get('admin/users/secretaire/destroy/{id}','UsersController@destroy3')->name('secretaire.destroy');
+Route::get('admin/users/secretaire/update/{id}','UsersController@update3')->name('secretaire.update');

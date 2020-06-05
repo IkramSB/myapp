@@ -35,15 +35,9 @@
 							Discutez avec un médecin en ligne. <br>AlloDoc est le moyen le plus rapide et le plus simple d'obtenir l'aide personnalisée d'un vrai médecin.
 						</p>
 					</header>
+					
 				</section>
-
-			
-
-
-
-
-
-
+				
 
 
 

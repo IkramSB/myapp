@@ -3,7 +3,7 @@
 
 
 @section('content')
-<div class="container">
+<div class="container"><a  href="patient/create"><button class="btn btn-primary">Ajouter un patient</button></a><br><br>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
@@ -33,9 +33,9 @@
                         <td>{{ $us->CIN}}</td>
                         <td>{{ $us->Num_assurance}}</td>
                         <td>
-                            <a href="userpatient/{{$us->ID_patient}}/edit"><button class="btn btn-primary">Modifier</button></a></td>
+                            <a href="patient/{{$us->ID_patient}}/edit"><button class="btn btn-primary">Modifier</button></a></td>
                            
-                         <td> <form action="{{route('userpatient.destroy',$us->ID_patient) }}"  method="POST">
+                         <td> <form action="{{route('patient.destroy',$us->ID_patient) }}"  method="POST">
                          {{ csrf_field() }}
                      <input type="hidden" name="_method" value="DELETE">
                      <button type="submit" class="btn btn-danger" >DELETE</button>
@@ -47,4 +47,4 @@
             </table>
         </div>
     
-@endsection 
+@endsection

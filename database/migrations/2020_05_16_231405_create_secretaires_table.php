@@ -18,7 +18,6 @@ class CreateSecretairesTable extends Migration
             $table->string('Nom' , 50);
             $table->string('Prenom' , 50);
             $table->string('telephone' , 10);
-            $table->integer('ID_user');
             $table->timestamps();
         });
     }
